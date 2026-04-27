@@ -1,0 +1,239 @@
+/* ============ Full banner mode ============ */
+.invitations-banner {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--color-border);
+  flex-shrink: 0;
+}
+
+.invitation-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-2) var(--sp-5);
+  background: var(--color-surface);
+  border-left: 2px solid var(--color-accent);
+}
+
+.invitation-icon {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.invitation-text {
+  flex: 1;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--color-text-secondary);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.invitation-text strong {
+  font-weight: 400;
+  color: var(--color-text-primary);
+}
+
+.invitation-role {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--color-accent);
+}
+
+.invitation-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+  flex-shrink: 0;
+}
+
+/* ============ Compact mode (header dropdown) ============ */
+.invitations-compact {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.invitations-bell-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.invitations-bell-btn:hover {
+  color: var(--color-accent);
+  background: var(--color-accent-dim);
+}
+
+.invitations-bell-count {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  min-width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--color-accent);
+  color: #000;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+/* Backdrop */
+.invitations-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 199;
+}
+
+/* Dropdown */
+.invitations-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 360px;
+  max-height: 400px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+}
+
+.invitations-dropdown-header {
+  padding: var(--sp-3) var(--sp-4);
+  border-bottom: 1px solid var(--color-border);
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--color-text-secondary);
+}
+
+.invitations-dropdown-list {
+  overflow-y: auto;
+  max-height: 340px;
+}
+
+.invitations-dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--transition-fast);
+}
+
+.invitations-dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.invitations-dropdown-item:hover {
+  background: var(--color-bg);
+}
+
+.invitations-dropdown-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.invitations-dropdown-project {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.invitations-dropdown-from {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  color: var(--color-text-secondary);
+}
+
+.invitations-dropdown-role {
+  color: var(--color-accent);
+  letter-spacing: 0.06em;
+}
+
+.invitations-dropdown-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+  flex-shrink: 0;
+}
+
+.invitations-dropdown-accept {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-md);
+  color: var(--color-success);
+  border: 1px solid var(--color-success);
+  background: transparent;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.invitations-dropdown-accept:hover:not(:disabled) {
+  background: rgba(0, 230, 118, 0.12);
+}
+
+.invitations-dropdown-accept:disabled {
+  opacity: 0.4;
+}
+
+.invitations-dropdown-decline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  background: transparent;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.invitations-dropdown-decline:hover:not(:disabled) {
+  color: var(--color-danger);
+  border-color: var(--color-danger);
+  background: var(--color-danger-dim);
+}
+
+.invitations-dropdown-decline:disabled {
+  opacity: 0.4;
+}

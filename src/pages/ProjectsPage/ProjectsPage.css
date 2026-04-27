@@ -1,0 +1,126 @@
+.projects-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.projects-main {
+  flex: 1;
+  overflow-y: auto;
+  background-color: var(--color-bg);
+  padding: var(--sp-8) var(--sp-6);
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-8);
+}
+
+/* Page header */
+.projects-page-header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-4);
+}
+
+.projects-page-title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: 0.04em;
+}
+
+.projects-page-count {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.06em;
+}
+
+/* Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--sp-4);
+  align-items: start;
+}
+
+/* Loading */
+.projects-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: var(--sp-12) 0;
+}
+
+.projects-loading-dots {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.projects-loading-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  animation: pulse-dot 1.2s ease-in-out infinite;
+}
+
+.projects-loading-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.projects-loading-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes pulse-dot {
+  0%, 80%, 100% { opacity: 0.2; transform: scale(0.8); }
+  40% { opacity: 1; transform: scale(1); }
+}
+
+.projects-loading-text {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--color-text-secondary);
+}
+
+/* Empty */
+.projects-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: var(--sp-12) 0;
+  text-align: center;
+}
+
+.projects-empty-icon {
+  color: var(--color-text-secondary);
+  opacity: 0.4;
+}
+
+.projects-empty-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: 0.04em;
+}
+
+.projects-empty-text {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--color-text-secondary);
+  max-width: 280px;
+  line-height: 1.6;
+}

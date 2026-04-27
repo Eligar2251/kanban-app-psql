@@ -1,0 +1,299 @@
+/* Overlay */
+.card-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 11, 13, 0.6);
+  z-index: 900;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Drawer panel */
+.card-drawer {
+  width: 100%;
+  max-width: 640px;
+  height: 100vh;
+  background: var(--color-surface);
+  border-left: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Header */
+.card-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sp-3) var(--sp-5);
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.card-drawer-header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.card-drawer-header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.card-drawer-column-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--col-badge-color, var(--color-accent));
+  border: 1px solid var(--col-badge-color, var(--color-accent));
+  background: color-mix(in srgb, var(--col-badge-color, var(--color-accent)) 8%, transparent);
+}
+
+.card-drawer-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.card-drawer-close:hover {
+  color: var(--color-text-primary);
+  background: var(--color-border);
+}
+
+/* Body — scrollable */
+.card-drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--sp-6) var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+  -webkit-overflow-scrolling: touch;
+}
+
+.card-drawer-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.card-drawer-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.card-drawer-body::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.card-drawer-body:hover::-webkit-scrollbar-thumb {
+  background: var(--color-border-hover);
+}
+
+/* Title */
+.card-drawer-title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+/* Meta row */
+.card-drawer-meta-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+}
+
+.card-drawer-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.04em;
+}
+
+.card-drawer-meta-item--danger {
+  color: var(--color-danger);
+}
+
+.card-drawer-meta-item--warning {
+  color: var(--color-warning);
+}
+
+.card-drawer-meta-value {
+  font-weight: 500;
+}
+
+/* Section label */
+.card-drawer-section-label {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  padding-bottom: var(--sp-2);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--sp-3);
+}
+
+/* Tags */
+.card-drawer-tags {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-drawer-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+}
+
+/* Assignee */
+.card-drawer-assignee-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-drawer-assignee-card {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.card-drawer-assignee-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  flex: 1;
+  min-width: 0;
+}
+
+.card-drawer-assignee-name {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.card-drawer-assignee-email {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  color: var(--color-text-secondary);
+}
+
+.card-drawer-no-assignee {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  padding: var(--sp-3);
+  background: var(--color-bg);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--color-text-secondary);
+}
+
+/* Description — main content area */
+.card-drawer-description {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-drawer-desc-content {
+  padding: var(--sp-4);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  min-height: 200px;
+  overflow-y: auto;
+  max-height: none;
+}
+
+.card-drawer-no-desc {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+/* Activity */
+.card-drawer-activity {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-drawer-activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.card-drawer-activity-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+
+.card-drawer-activity-item strong {
+  color: var(--color-text-primary);
+  font-weight: 700;
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.card-drawer-activity-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-border);
+  flex-shrink: 0;
+  margin-left: 9px;
+  margin-right: 5px;
+}
+
+.card-drawer-activity-time {
+  margin-left: auto;
+  font-size: 10px;
+  color: var(--color-text-secondary);
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.card-drawer-comments {
+  display: flex;
+  flex-direction: column;
+}

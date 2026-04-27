@@ -1,0 +1,13 @@
+{
+  "name": "kanban-realtime-server",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "jose": "^5.9.6",
+    "pg": "^8.13.1",
+    "ws": "^8.18.0"
+  }
+}

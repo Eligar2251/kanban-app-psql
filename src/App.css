@@ -1,0 +1,25 @@
+.app-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background: var(--color-bg);
+  background-image: radial-gradient(circle, #1E1E24 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.app-loading-text {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  animation: loading-blink 1.2s ease-in-out infinite;
+}
+
+@keyframes loading-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}

@@ -1,0 +1,222 @@
+.comment-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+/* List */
+.comment-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.comment-loading,
+.comment-empty {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  text-align: center;
+  padding: var(--sp-4);
+  letter-spacing: 0.04em;
+}
+
+/* Item */
+.comment-item {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: flex-start;
+}
+
+.comment-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.comment-author {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.comment-time {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  color: var(--color-text-secondary);
+  opacity: 0.7;
+}
+
+/* Comment body */
+.comment-body {
+  padding: var(--sp-3);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.comment-body .markdown-body {
+  font-size: 12px;
+}
+
+/* Menu */
+.comment-menu-wrap {
+  position: relative;
+  margin-left: auto;
+}
+
+.comment-menu-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  opacity: 0;
+  transition: opacity var(--transition-fast), background-color var(--transition-fast);
+}
+
+.comment-item:hover .comment-menu-trigger {
+  opacity: 1;
+}
+
+.comment-menu-trigger:hover {
+  background: var(--color-border);
+  color: var(--color-text-primary);
+}
+
+.comment-menu-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+}
+
+.comment-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 4px;
+  min-width: 120px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--sp-1);
+  z-index: 51;
+}
+
+.comment-menu-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  width: 100%;
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  text-align: left;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.comment-menu-item:hover {
+  color: var(--color-text-primary);
+  background: var(--color-border);
+}
+
+.comment-menu-item--danger:hover {
+  color: var(--color-danger);
+  background: var(--color-danger-dim);
+}
+
+/* Edit */
+.comment-edit-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.comment-edit-textarea {
+  padding: var(--sp-2) var(--sp-3);
+  background: var(--color-bg);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-text-primary);
+  outline: none;
+  resize: vertical;
+  min-height: 60px;
+}
+
+.comment-edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--sp-2);
+}
+
+/* Input section */
+.comment-input-section {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: flex-start;
+  padding-top: var(--sp-3);
+  border-top: 1px solid var(--color-border);
+}
+
+.comment-input-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-bg);
+  transition: border-color var(--transition-fast);
+}
+
+.comment-input-wrap:focus-within {
+  border-color: var(--color-accent);
+}
+
+.comment-input-textarea {
+  padding: var(--sp-3);
+  background: transparent;
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-text-primary);
+  outline: none;
+  resize: none;
+  min-height: 60px;
+  line-height: 1.6;
+}
+
+.comment-input-textarea::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.5;
+  font-family: var(--font-body);
+}
+
+.comment-input-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sp-1) var(--sp-3) var(--sp-2);
+}
+
+.comment-input-hint {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  color: var(--color-text-secondary);
+  opacity: 0.5;
+}

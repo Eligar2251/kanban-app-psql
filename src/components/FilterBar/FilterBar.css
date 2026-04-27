@@ -1,0 +1,204 @@
+.filter-bar {
+  height: 44px;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.filter-bar::-webkit-scrollbar {
+  height: 2px;
+}
+
+.filter-bar-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: 0 var(--sp-5);
+  height: 100%;
+  width: max-content;
+  min-width: 100%;
+}
+
+.filter-bar-icon {
+  color: var(--color-text-secondary);
+  flex-shrink: 0;
+}
+
+/* Search */
+.filter-search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.filter-search-icon {
+  position: absolute;
+  left: 8px;
+  color: var(--color-text-secondary);
+  pointer-events: none;
+}
+
+.filter-search-input {
+  width: 180px;
+  height: 28px;
+  padding: 0 28px 0 28px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-text-primary);
+  transition: border-color var(--transition-fast);
+  outline: none;
+}
+
+.filter-search-input::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.6;
+}
+
+.filter-search-input:focus {
+  border-color: var(--color-accent);
+}
+
+.filter-search-clear {
+  position: absolute;
+  right: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  padding: 2px;
+  border-radius: 2px;
+  transition: color var(--transition-fast);
+}
+
+.filter-search-clear:hover {
+  color: var(--color-text-primary);
+}
+
+/* Divider */
+.filter-divider {
+  width: 1px;
+  height: 20px;
+  background: var(--color-border);
+  flex-shrink: 0;
+}
+
+/* Groups */
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-shrink: 0;
+}
+
+.filter-group-label {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+/* Chips */
+.filter-chips {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+}
+
+.filter-chip {
+  height: 22px;
+  padding: 0 8px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  background: transparent;
+  transition:
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    background-color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.filter-chip:hover {
+  border-color: var(--color-border-hover);
+  color: var(--color-text-primary);
+}
+
+.filter-chip--active {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: var(--color-accent-dim);
+}
+
+/* Priority chip colors when active */
+.filter-chip--priority-urgent.filter-chip--active {
+  border-color: var(--priority-urgent);
+  color: var(--priority-urgent);
+  background: rgba(255, 59, 59, 0.08);
+}
+
+.filter-chip--priority-high.filter-chip--active {
+  border-color: var(--priority-high);
+  color: var(--priority-high);
+  background: rgba(255, 107, 0, 0.08);
+}
+
+.filter-chip--priority-medium.filter-chip--active {
+  border-color: var(--priority-medium);
+  color: var(--priority-medium);
+  background: rgba(255, 149, 0, 0.08);
+}
+
+.filter-chip--priority-low.filter-chip--active {
+  border-color: var(--priority-low);
+  color: var(--priority-low);
+  background: rgba(0, 230, 118, 0.08);
+}
+
+/* Tag chip */
+.filter-chip--tag {
+  border-color: var(--tag-color, var(--color-border));
+}
+
+.filter-chip--tag.filter-chip--active {
+  color: var(--tag-color, var(--color-accent));
+  border-color: var(--tag-color, var(--color-accent));
+  background: color-mix(in srgb, var(--tag-color, var(--color-accent)) 10%, transparent);
+}
+
+/* Reset */
+.filter-reset-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--color-danger);
+  border: 1px solid var(--color-danger);
+  background: transparent;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.filter-reset-btn:hover {
+  background: var(--color-danger-dim);
+}

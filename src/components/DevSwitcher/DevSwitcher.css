@@ -1,0 +1,213 @@
+.dev-switcher {
+  position: fixed;
+  bottom: var(--sp-4);
+  right: var(--sp-4);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Toggle button */
+.dev-switcher-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 28px;
+  padding: 0 10px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  transition:
+    border-color var(--transition-fast),
+    background-color var(--transition-fast);
+  cursor: pointer;
+}
+
+.dev-switcher-toggle:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent-dim);
+}
+
+.dev-switcher-toggle--open {
+  border-color: var(--color-accent);
+}
+
+.dev-switcher-toggle-label {
+  font-weight: 700;
+}
+
+/* Panel */
+.dev-switcher-panel {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  right: 0;
+  width: 300px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.dev-switcher-header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-4);
+  border-bottom: 1px solid var(--color-border);
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--color-text-secondary);
+}
+
+/* Error */
+.dev-switcher-error {
+  padding: var(--sp-2) var(--sp-4);
+  font-family: var(--font-ui);
+  font-size: 10px;
+  color: var(--color-warning);
+  background: rgba(255, 149, 0, 0.06);
+  border-bottom: 1px solid var(--color-border);
+  line-height: 1.5;
+}
+
+/* Account list */
+.dev-switcher-list {
+  display: flex;
+  flex-direction: column;
+  padding: var(--sp-2);
+  gap: 2px;
+}
+
+.dev-switcher-account {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  background: transparent;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
+  cursor: pointer;
+  text-align: left;
+}
+
+.dev-switcher-account:hover:not(:disabled) {
+  background: var(--color-bg);
+}
+
+.dev-switcher-account--active {
+  border-color: var(--account-color, var(--color-accent));
+  background: color-mix(in srgb, var(--account-color, var(--color-accent)) 6%, transparent);
+}
+
+.dev-switcher-account:disabled {
+  cursor: default;
+}
+
+.dev-switcher-account-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  flex: 1;
+  min-width: 0;
+}
+
+.dev-switcher-account-name {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dev-switcher-account-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-ui);
+  font-size: 10px;
+  color: var(--color-text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dev-switcher-account-role {
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+}
+
+.dev-switcher-account-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  flex-shrink: 0;
+}
+
+.dev-switcher-check {
+  color: var(--color-accent);
+}
+
+.dev-switcher-spinner {
+  animation: dev-spin 0.8s linear infinite;
+  color: var(--color-accent);
+}
+
+@keyframes dev-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Footer */
+.dev-switcher-footer {
+  padding: var(--sp-2) var(--sp-3);
+  border-top: 1px solid var(--color-border);
+}
+
+.dev-switcher-create-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-ui);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--color-text-secondary);
+  background: transparent;
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast);
+  cursor: pointer;
+  justify-content: center;
+  border: 1px dashed var(--color-border);
+}
+
+.dev-switcher-create-btn:hover:not(:disabled) {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  background: var(--color-accent-dim);
+}
+
+.dev-switcher-create-btn:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
